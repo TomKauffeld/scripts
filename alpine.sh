@@ -11,6 +11,10 @@ apk add wget sudo nano
 echo "Installing Xen Guest Utilities"
 apk add xe-guest-utilities-openrc xe-guest-utilities xe-guest-utilities-udev
 echo "Setting up Xen Guest Utilities"
-rc-update add xe-guest-utilities
+rc-update add xe-guest-utilities default
 rc-service xe-guest-utilities start
+echo "Installing Zabbix Agent"
+apk add zabbix-agent net-snmp
+echo "Setting up Zabbix Agent"
+rc-update add zabbix-agentd default
 echo "Done"
